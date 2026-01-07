@@ -1,0 +1,56 @@
+{
+  "model_name": "ShallowConvNet",
+  "architecture": "CNN with temporal + spatial convolutions",
+  "task": "Binary Motor Imagery Classification (Left vs Right Hand)",
+  "dataset": "BNCI2014001",
+  "n_subjects": 3,
+  "input_shape": [
+    751,
+    22
+  ],
+  "output_classes": 2,
+  "class_names": [
+    "left_hand",
+    "right_hand"
+  ],
+  "hyperparameters": {
+    "temporal_filters": 40,
+    "temporal_kernel_size": 25,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "dropout_rate": 0.5,
+    "early_stopping_patience": 20
+  },
+  "performance": {
+    "train_accuracy": 0.8427152037620544,
+    "validation_accuracy": 0.7615384459495544,
+    "test_accuracy": 0.8,
+    "test_auc_roc": 0.9076923076923076,
+    "epochs_trained": 93
+  },
+  "data_info": {
+    "n_trials_total": 864,
+    "n_channels": 22,
+    "n_timepoints": 751,
+    "sampling_rate_hz": 250,
+    "trial_duration_s": 3.004,
+    "frequency_range_hz": [
+      8,
+      30
+    ],
+    "preprocessing": [
+      "baseline_correction",
+      "z_score_normalization"
+    ]
+  },
+  "data_split": {
+    "train_samples": 604,
+    "validation_samples": 130,
+    "test_samples": 130,
+    "train_percent": 69.9074074074074,
+    "val_percent": 15.046296296296296,
+    "test_percent": 15.046296296296296
+  },
+  "date_trained": "2025-12-29 16:54:54"
+}
